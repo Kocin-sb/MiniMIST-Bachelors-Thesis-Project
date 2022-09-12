@@ -1,0 +1,32 @@
+Printing a PCBSteps:
+
+1. Using Circuit Cam to generate .cam extention to print
+ 1. Copy the plotted files (.gbr) to the computer.
+ 2. Import all the files into CircuitCAM application
+	(F_CU.gbr,Filetype:GerberX,Layer:TopLayer)
+	(Edge_cuts.gbr,Filetype:GerberX,Layer:BorderOutline)
+	(B_Silkscreen.gbr,Filetype:GerberX,Layer:SilkScreenBottom)*cancel in our case.
+	(B_CU.gbr,Filetype:GerberX,Layer:BottomLayer)
+	(B_Silkccreen.gbr,Filetype:GerberX,Layer:SilkScreenTop) *Layer:TopLayer in our case
+	(*.drl,FileType:NC-drill,Layer:DrillPlated)
+ 3.Isolate top and bottom layer using Edit->insulate.
+	1. inside jobs select "Bottom" and press Run
+	2. Inside jobs select "Top" and press Run
+ 4. Press Contour Routing Button (next to import button) and press Run without changing any settings
+	-This will create a cutting pattern outside of the edge from your board outline
+	- Place on the CuttingOutside Layer.
+ 5. Enter Layers menu and deselect other layers other than CuttingOutside.
+ 6. On the graphical view, click the end where you need to break breakout tabs and then press the BreakOutTab button. Repeat on the other side.
+	- Nesseary to avoid unnesseary moments in of the PCB while milling
+ 7. Go back to layers to check all unchecked layers that need to be exported.
+ 8. Export the file, after checking for errors, as *.cam file.
+
+2. Open Board Master applciation to start printing the PCB.
+ 1. Import the file.
+ 2. Place the diagram at right place and choose the right board to be printed on.
+ 3. Once placed properly and make sure the board is taped properly.
+ 4. Start with drilling.
+ 5. Milling Front ** Add the pink thing
+ 6. Milling back
+ 7. Cutting outside.
+
